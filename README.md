@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @newton184
-- 👀 I’m interested in ...back-end developing
-- 🌱 I’m currently learning ...Java and python
+- 👀 I’m interested in ...back-end developing,cybersecurity,A.I,Cloud computing
+- 🌱 I’m currently learning ...
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me ...roganjoek22@gmail.com
 
