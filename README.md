@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @mugen_ke
-- 👀 I’m interested in ...back-end developing,cybersecurity,A.I,Cloud computing
+- 👀 I’m interested in ...front & back-end developing,cybersecurity,A.I,Cloud computing
 - 🌱 I’m currently learning ...
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me ...roganjoek22@gmail.com
