@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SokOnline</title>
+  <title>Fresh Fusion</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script>
@@ -56,7 +56,7 @@
   <header class="bg-primary text-white p-4 shadow-md">
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
       <div class="flex items-center mb-4 md:mb-0">
-        <h1 class="text-2xl font-bold">SokOnline</h1>
+        <h1 class="text-2xl font-bold">Fresh fusion</h1>
       </div>
       
       <div class="w-full md:w-1/2 relative">
@@ -101,7 +101,7 @@
     <!-- Hero Section -->
     <div class="bg-gray-200 dark:bg-dark-card rounded-lg p-6 mb-8 flex flex-col md:flex-row items-center">
       <div class="md:w-1/2 mb-4 md:mb-0">
-        <h2 class="text-3xl font-bold mb-2">Happy Shopping!</h2>
+        <h2 class="text-3xl font-bold mb-2">Karibu! Jibambe!</h2>
         <p class="mb-4">Discover amazing products with fast shipping and secure payments via PayPal and M-PESA.</p>
         <button class="bg-secondary hover:bg-yellow-600 text-white px-6 py-2 rounded-md transition">Shop Now</button>
       </div>
@@ -418,7 +418,7 @@
           Or enter this setup key manually:
         </p>
         <div class="bg-gray-100 dark:bg-gray-800 p-2 rounded-md text-center font-mono mb-4">
-          Soko04-0NLin32-3AXZ9-FG721
+          FR3SH-4SI0N-3AXZ9-FG721
         </div>
       </div>
       
@@ -519,17 +519,17 @@
         <div>
           <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
           <div class="flex space-x-4 mb-4">
-            <a href="https://www.facebook.com/newton.njoroge.902" class="text-xl hover:text-primary"><i class="fab fa-facebook"></i></a>
-            <a href="https://x.com/newtonn43528105" class="text-xl hover:text-primary"><i class="fab fa-X"></i></a>
-            <a href="https://www.instagram.com/mugen_ke/" class="text-xl hover:text-primary"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@mugen_ke" class="text-xl hover:text-primary"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="text-xl hover:text-primary"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-xl hover:text-primary"><i class="fab fa-X"></i></a>
+            <a href="#" class="text-xl hover:text-primary"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-xl hover:text-primary"><i class="fab fa-tiktok"></i></a>
           </div>
           <p class="text-sm text-gray-400">Sign up for our newsletter to receive updates and exclusive offers.</p>
         </div>
       </div>
       
       <div class="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
-        <p class="text-sm text-gray-400 mb-4 md:mb-0">© 2025 SokOnline. All rights reserved.</p>
+        <p class="text-sm text-gray-400 mb-4 md:mb-0">© 2025 Fresh Fusion. All rights reserved.</p>
         <div class="flex space-x-4">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/paypal/paypal-original.svg" alt="PayPal" class="h-8 bg-white rounded p-1">
           <div class="h-8 bg-green-600 text-white font-bold flex items-center justify-center px-2 rounded">M-PESA</div>
@@ -625,6 +625,35 @@
         category: "Sports"
       }
     ];
+//Putting products into varios categories
+    function renderProducts(category = "all") {
+      const productsContainer = document.getElementById('products-container');
+      productsContainer.innerHTML = '';
+      
+      products.filter(product => category === "all" || product.category === category)
+        .forEach(product => {
+          const productElement = document.createElement('div');
+          productElement.classList.add('product-card', 'bg-white', 'dark:bg-dark-card', 'rounded-lg', 'shadow-md', 'overflow-hidden', 'p-4');
+          
+          productElement.innerHTML = `
+            <h3 class="text-lg font-semibold">${product.name}</h3>
+            <p class="text-gray-700 dark:text-gray-300">$${product.price.toFixed(2)}</p>
+            ${product.stock > 0 ? 
+              `<button class="bg-primary hover:bg-indigo-700 text-white px-3 py-1 rounded-md">Add to Cart</button>` : 
+              `<span class="text-red-500 font-bold">Sold Out</span>`}
+          `;
+          
+          productsContainer.appendChild(productElement);
+        });
+    }
+
+    document.querySelectorAll('.category-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        renderProducts(tab.dataset.category);
+      });
+    });
+    
+    renderProducts();
     
     // Cart functionality
     let cart = [];
